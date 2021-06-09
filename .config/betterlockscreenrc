@@ -1,0 +1,16 @@
+#Colors are in #RRGGBBAA format
+
+insidecolor=00000000        #Empty      Color inside the ring
+ringcolor=00000000          #White      Color of the ring
+keyhlcolor=A37ACCFF         #Magenta    Color of part of the ring when key is pressed
+bshlcolor=90E1C6FF          #Cyan       Color of part of the ring when backspace is pressed         
+separatorcolor=00000000
+insidevercolor=91B362FF     #Green      Color inside the ring when password matches
+insidewrongcolor=EA6C73FF   #Red        Color inside the ring when password does not match
+ringvercolor=91B362FF       #Green      Color of the ring when password matches        
+ringwrongcolor=EA6C73FF     #Red        Color of the ring when password does not match
+verifcolor=00000000
+timecolor=FFFFFFFF          #White      Color of the time
+datecolor=FFFFFFFF          #White      Custom text color
+loginbox=00000066
+locktext="Try and guess..."

@@ -1,0 +1,146 @@
+//------------------------------
+//	Author(Github): JoaoRuss0
+//	Date: 24/02/21
+//------------------------------
+
+* {
+	black:      		#01060E;
+	red:        		#EA6C73;
+	green:      		#91B362;
+	yellow:     		#e6b450;
+	blue:       		#53BDFA;
+	magenta:    		#A37ACC;
+	light-magenta:		#D4BFFF;
+	cyan:       		#90E1C6;
+	emphasis:   		#ABB2BF;
+	text:       		#FFFFFF;
+	text-alt:   		#b2b2b2;
+	bg:         		#0A0E14;
+
+	background-color:	@bg;
+	text-color: 		@text;
+}
+
+window {
+	background-color: @bg;
+	border: 2px;
+	border-color: #ffffff;
+	padding: 4px;
+	location: south;
+
+	children: [inputbar, message, listview, mode-switcher];
+}
+
+inputbar {
+	orientation: horizontal;
+	children: [prompt-wrap, entry, inputbar-rows-wrap];
+}
+
+prompt-wrap {
+	orientation: horizontal;
+	expand:false;
+	children: [prompt, textbox-prompt-colon];
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: ":";
+}
+
+inputbar-rows-wrap {
+	orientation: horizontal;
+	expand: false;
+	children: [num-filtered-rows, textbox-sep, num-rows];
+}
+
+textbox-sep {
+	str: " of ";
+}
+
+listview {
+	dynamic: true;
+	border: 2px dash 0px 0px;
+	border-color: #ffffff;
+	scrollbar: false;
+}
+
+element {
+	padding: 5px;
+	text-color: @text;
+}
+
+element.normal.normal {
+	background-color: @bg;
+	text-color: @text;
+}
+
+element.alternate.normal {
+	background-color: @bg;
+	text-color: @text;
+}
+
+element.selected.normal {
+	background-color: @blue;
+	text-color: @black;
+}
+
+element.normal.urgent{
+	background-color: @red;
+	text-color: @text;
+}
+
+element.alternate.urgent {
+	background-color: @red;
+	text-color: @text;
+}
+
+element.selected.urgent {
+	background-color: @red;
+	text-color: @text;
+}
+
+element.normal.active {
+	background-color: @green;
+	text-color: @black;
+}
+
+element.alternate.active {
+	background-color: @green;
+	text-color: @text;
+}
+
+element.selected.active {
+	background-color: @green;
+	text-color: @text;
+}
+
+message {
+	padding: 0px;
+	background-color: @bg;
+	border: 100px;
+	border-color: @black;
+}
+
+button {
+	margin: 4px 0px 0px 0px;
+	spacing:    0;
+	text-color: @text;
+}
+
+button.selected {
+	padding:0px;
+	border: 2px;
+	text-color: #000000;
+	border-color: @magenta;
+	background-color: @light-magenta;
+}
+
+mode-switcher {
+	border: 2px dash 0px 0px;
+	border-color: #ffffff;
+}
+
+error-message {
+	background-color: @bg;
+	text-color: @text;
+}

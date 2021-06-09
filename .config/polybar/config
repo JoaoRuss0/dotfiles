@@ -1,0 +1,171 @@
+;==============================================================================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==============================================================================================================
+
+[colors]
+background                      = ${xrdb:background}
+foreground                      = ${xrdb:foreground}
+
+; BLACK
+00                              = ${xrdb:color0}
+08                              = ${xrdb:color8}
+
+; RED
+01                              = ${xrdb:color1}
+09                              = ${xrdb:color9}
+
+; GREEN
+02                              = ${xrdb:color2}
+10                              = ${xrdb:color10}
+
+; YELLOW
+03                              = ${xrdb:color3}
+11                              = ${xrdb:color11}
+
+; BLUE
+04                              = ${xrdb:color4}
+12                              = ${xrdb:color12}
+
+; MAGENTA
+05                              = ${xrdb:color5}
+13                              = ${xrdb:color13}
+
+; CYAN
+06                              = ${xrdb:color6}
+14                              = ${xrdb:color14}
+
+; WHITE
+07                              = ${xrdb:color7}
+15                              = ${xrdb:color15}
+
+;==============================================================================================================
+
+[bar/bar]
+background                      = ${colors.background}
+foreground                      = ${colors.foreground}
+border-color                    = ${colors.foreground}
+font-0                          = SFMono:size=12:style=Medium:antialias=true;4
+font-1                          = SFMono:size=12:style=Medium:antialias=true;2
+font-2                          = FontAwesome5Free:style=Solid:size=11:antialias=true;2.5
+font-3                          = FontAwesome5Brands:style=Solid:size=12:antialias=true;2
+width                           = 99.6%
+height                          = 2%
+offset-x                        = 0.2%
+offset-y                        = 0%
+radius                          = 0.0
+border-size                     = 0.05%
+padding-right                   = 2
+padding-left                    = 1
+module-margin                   = 1
+modules-left                    = date pulseaudio powermenu
+modules-center                  = i3
+modules-right                   = 
+fixed-center                    = true
+cursor-click                    = pointer
+cursor-scroll                   = ns-resize
+wm-restack                      = i3
+override-redirect               = true
+tray-padding                    = 0
+tray-position                   = right
+
+;==============================================================================================================
+
+[module/date]
+type                            = internal/date
+interval                        = 60
+date                            = " %{T1}%d/%m"
+time                            = %H:%M
+format-prefix                   = "%{T3}"
+format-prefix-foreground        = ${colors.foreground}
+label                           = %date% %time%
+
+;==============================================================================================================
+
+[module/pulseaudio]
+type                            = internal/pulseaudio
+format-volume                   = %{A3:alacritty --command="pacmixer" --title="pacmixer-floating" & disown:}<bar-volume>%{A}
+use-ui-max                      = false
+interval                        = 2
+bar-volume-width                = 10
+bar-volume-gradient             = true
+bar-volume-foreground-0         = ${colors.02}
+bar-volume-foreground-1         = ${colors.02}
+bar-volume-foreground-2         = ${colors.02}
+bar-volume-foreground-3         = ${colors.02}
+bar-volume-foreground-4         = ${colors.11}
+bar-volume-foreground-5         = ${colors.11}
+bar-volume-foreground-6         = ${colors.11}
+bar-volume-foreground-7         = ${colors.11}
+bar-volume-foreground-8         = ${colors.09}
+bar-volume-foreground-9         = ${colors.09}
+label-muted-foreground          = ${colors.08}
+bar-volume-empty-foreground     = ${colors.foreground}
+bar-volume-indicator-font       = 1
+bar-volume-empty-font           = 1
+bar-volume-fill-font            = 1
+bar-volume-indicator            = %{T2}|
+bar-volume-fill                 = %{T2}─
+bar-volume-empty                = %{T2}─
+label-muted                     = %{T2}──────────
+
+;==============================================================================================================
+
+[module/powermenu]
+type                            = custom/menu
+expand-right                    = true
+format-spacing                  = 1
+label-open                      = "%{T3}"
+label-close                     = "%{T3}"
+label-separator                 = |
+menu-0-0                        = "%{T3}"
+menu-0-0-exec                   = betterlockscreen -l blur
+menu-0-1                        = "%{T3}"
+menu-0-1-exec                   = betterlockscreen -s blur
+menu-0-2                        = "%{T3}"
+menu-0-2-exec                   = shutdown -r now
+menu-0-3                        = "%{T3}"
+menu-0-3-exec                   = shutdown -h now
+
+;;==============================================================================================================
+
+[module/i3]
+type                            = internal/i3
+format                          = <label-state> <label-mode>
+label-separator                 = |
+index-sort                      = true
+enable-scroll                   = false
+label-focused                   = "%{T3}"
+label-focused-padding           = 1
+label-unfocused                 = "%{T3}"
+label-unfocused-foreground      = ${colors.00}
+label-unfocused-padding         = 1
+label-urgent                    = "%{T3}"
+label-urgent-foreground         = ${colors.01}
+label-urgent-padding            = 1
+
+;==============================================================================================================
+
+[settings]
+screenchange-reload             = true
+
+;==============================================================================================================
+
+[global/wm]
+margin-top                      = 5
+margin-bottom                   = 5
+
+;==============================================================================================================
