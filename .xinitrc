@@ -36,7 +36,7 @@ fi
 # Start Gnome's Polkit Authentication Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Start udisks2 fornt-end
+# Start udisks2 front-end
 udiskie --tray &
 
 # Start i3-gaps (Window Manager)
