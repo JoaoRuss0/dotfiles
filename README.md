@@ -4,6 +4,12 @@ This repository contains some of my old arch linux configuration files and below
 
 <br>
 
+![ArchLinuxDesktop](image0.png)
+
+![ArchLinuxVSCodeRofi](image1.png)
+
+<br>
+
 | **Category**              | **Name**           | **About**                                          | **Download**                                                                    |
 |:--------------------------|:-------------------|:---------------------------------------------------|:--------------------------------------------------------------------------------|
 |**Shell**                  |Bash                |https://www.gnu.org/software/bash                   |[Download](https://archlinux.org/packages/core/x86_64/bash/                     )|
