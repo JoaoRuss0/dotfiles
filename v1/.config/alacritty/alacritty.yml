@@ -1,0 +1,51 @@
+font:
+    normal:
+      family:       SFMono
+      style:        Regular
+
+    bold:
+      family:       SFMono
+      style:        Bold
+
+    italic:
+      family:       SFMono
+      style:        Italic
+
+    bold_italic:
+      family:       SFMono
+      style:        Bold Italic
+
+    size:           10
+
+# Colors (Ayu Dark)
+colors:
+# Default colors
+    primary:
+        background: '#0A0E14'
+        foreground: '#FFFFFF'
+
+# Normal colors
+    normal:
+        black:      '#01060E'
+        red:        '#EA6C73'
+        green:      '#91B362'
+        yellow:     '#e6b450'
+        blue:       '#53BDFA'
+        magenta:    '#A37ACC'
+        cyan:       '#90E1C6'
+        white:      '#C7C7C7'
+
+# Bright colors
+    bright:
+        black:      '#686868'
+        red:        '#F07178'
+        green:      '#C2D94C'
+        yellow:     '#ebbf67'
+        blue:       '#59C2FF'
+        magenta:    '#D4BFFF'
+        cyan:       '#95E6CB'
+        white:      '#FFFFFF'
+#window:
+    #padding:
+        #x: 0
+        #y: 0
