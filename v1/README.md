@@ -2,8 +2,6 @@
 
 This repository contains some of my old arch linux configuration files and below is a list of some of the packages I usually install / use.
 
-<br>
-
 ![ArchLinuxDesktop](image0.png)
 
 ![ArchLinuxVSCodeRofi](image1.png)
